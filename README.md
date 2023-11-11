@@ -217,8 +217,8 @@ CREATE VIEW max_par_genre (gen, num_view)
 AS
 SELECT g.genre AS gen, MAX(pnv.num_view) AS num_view
     FROM genres AS g
-    INNER JOIN program_number_view AS pnv
-    ON g.program_id = pnv.prog_id
+         INNER JOIN program_number_view AS pnv
+         ON g.program_id = pnv.prog_id
     GROUP BY genre;
 
 
@@ -226,12 +226,12 @@ CREATE VIEW program_number_view (prog_id, num_view)
 AS
 SELECT p.id AS prog_id, SUM(number_of_view) / COUNT(e.id) AS num_view
     FROM broadcasts AS b
-    INNER JOIN episodes AS e
-    ON b.episode_id = e.id
-    INNER JOIN program_episodes AS pe
-    ON e.id = pe.episode_id
-    INNER JOIN programs AS p
-    ON pe.program_id = p.id
+         INNER JOIN episodes AS e
+         ON b.episode_id = e.id
+         INNER JOIN program_episodes AS pe
+         ON e.id = pe.episode_id
+         INNER JOIN programs AS p
+         ON pe.program_id = p.id
     GROUP BY p.id;
 
 -- 本体
