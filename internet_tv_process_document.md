@@ -68,7 +68,7 @@ MySQLを使用し、インターネットTVのデータベース構築を行う�
 その後下記コマンドを実行する。
 
 ```bash
-git clone xxxxxx.git
+git clone https://github.com/pandaFive/sql-practice-internet-tv.git
 ```
 
 ### 7.2 internet_tv.sql ファイルからデータベースを作成する方法
